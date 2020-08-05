@@ -7,24 +7,31 @@ from time import sleep
 import sys
 
 
-
-# for i in xrange(20):
-#     bar.update(i+1)
-#     sleep(0.1)
-
-
 def main():
-    print("A logo Adding utility \n\n")
+    print("A logo Adding utility \n")
+
+    logo_file = './Data/temp_logo.png'
+    brush_file = './Data/temp_brush.png'
+    logo_file1 = './Data/temp_logo.nit'
+    brush_file1 = './Data/temp_brush.nit'
+    try:
+       os.remove(logo_file)
+       os.remove(brush_file)
+    except OSError:
+        pass
+    try:
+       os.remove(logo_file1)
+       os.remove(brush_file1)
+    except OSError:
+        pass
     #Creating Copies
     mydecoder.temp_copy()
     mydecoder.rename()
     
     #For logo
-    logo_file = './Data/temp_logo.png'
     logoIm = Image.open(logo_file)
     logoWidth, logoHeight = logoIm.size
     #For Brush
-    brush_file = './Data/temp_brush.png'
     brushIm = Image.open(brush_file)
     brushWidth, brushHeight = logoIm.size
     
@@ -72,6 +79,7 @@ def main():
     os.remove(logo_file)
     os.remove(brush_file)
     bar.finish()
+    temp = input('\nAll images are compiled successfuly\n\nPress any key to exit !!')
 
 if __name__=="__main__":
     main()

@@ -9,7 +9,7 @@ import sys
 
 def main():
     print("A logo Adding utility \n")
-
+    print("Welcome back JiLL")
     logo_file = './Data/temp_logo.png'
     brush_file = './Data/temp_brush.png'
     logo_file1 = './Data/temp_logo.nit'
